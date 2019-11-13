@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Tune } from "./interface/interface";
+import { toUnicode } from "punycode";
 const App: React.FC = () => {
   useEffect(() => {}, []);
   const [inputValue, setInputValue] = useState<[]>([]);
+  const [playTune, setTune] = useState()
   const getContent = (search: string) => {
     const url: any = new URL("https://itunes.apple.com/search");
     const params = { term: search, media: "musicVideo", limit:'25' };
@@ -19,6 +21,7 @@ const App: React.FC = () => {
     setInputValue(list.results);
   };
 
+
   return (
     <div className="tunes">
       <div className="tunes-search">
@@ -27,8 +30,8 @@ const App: React.FC = () => {
         </h1>
         <input
           type="text"
-          onChange={(ev: React.ChangeEvent<HTMLInputElement>): void =>
-            getContent(ev.target.value)
+          onChange={(event: React.ChangeEvent<HTMLInputElement>): void =>
+            getContent(event.target.value)
           }
         />
       </div>
@@ -41,9 +44,13 @@ const App: React.FC = () => {
               }}
               className="tune-artwork"
               title={tune.trackName}
+              onClick={()=>{setTune(tune)}}
             ></div>
           );
         })}
+      </div>
+      <div className='tunes-player'>
+        {playTune ? <video autoPlay src={playTune.previewUrl} /> : <div></div>}
       </div>
     </div>
   );

@@ -11,15 +11,15 @@ html {
 .tune-artwork {
   width: 150px;
   height: 125px;
-  background: center center no-repeat;
-  background-size: auto 100%;
+  background:  center center no-repeat;
+  background-size: cover;
   background-color: #fafafa;
+  background-color: #303030;
 }
 .tunes-container {
   max-width: 1080px;
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
   margin: 100px auto;
 }
 .tunes-search {
