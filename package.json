@@ -1,7 +1,12 @@
 {
-  "name": "itunes-react",
+  "name": "itunes-search-react",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Darik Hart",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neuralline/itunes-search-react.git"
+  },
   "dependencies": {
     "@types/jest": "24.0.22",
     "@types/node": "12.12.7",
