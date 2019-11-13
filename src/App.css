@@ -1,26 +1,58 @@
 .tunes {
   background-color: #000;
   color: #ccc;
+  padding: 20px;
 }
 
 html {
   background-color: #000;
   color: #ccc;
 }
-
-.tune-artwork {
-  width: 150px;
-  height: 125px;
-  background:  center center no-repeat;
+.fav-icon {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #303030;
+  margin: 5px;
+  border-radius: 6px;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+.tunes-artwork {
+  width: 125px;
+  height: 100px;
+  background: center center no-repeat;
   background-size: cover;
-  background-color: #fafafa;
   background-color: #303030;
 }
+.tunes-player {
+  display: inline-block; 
+  background-color: #303030;
+  height: auto;
+}
+.player {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+.tunes-section {
+  display: grid;
+  margin: 50px 20px;
+  grid-template-columns: 60% 30%;
+  justify-content: center;
+  align-items: center;
+}
+
 .tunes-container {
-  max-width: 1080px;
   display: flex;
   flex-wrap: wrap;
-  margin: 100px auto;
+}
+.tunes-favorite {
+  width: 100%;
 }
 .tunes-search {
   padding: 10px;
